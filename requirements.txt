@@ -1,0 +1,10 @@
+art==6.4
+colorama==0.4.6
+pillow==11.1.0
+pyaes==1.6.1
+pyasn1==0.6.1
+Pyrogram==2.0.106
+PySocks==1.7.1
+rsa==4.9
+simple-term-menu==1.6.6
+Telethon==1.39.0
