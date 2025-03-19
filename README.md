@@ -1,2 +1,4 @@
 TelegConsole
-![image](https://github.com/user-attachments/assets/5b379e15-b834-45cb-83b4-66a800cc2178)
+
+![image](https://github.com/user-attachments/assets/acf2700f-3dd1-40e6-a9c5-290e2660db76)
+
