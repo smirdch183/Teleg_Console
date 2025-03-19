@@ -99,6 +99,7 @@ async def main_menu():
             f"Отправить сообщение ({chat_info})",
             f"Просмотр медиа ({chat_info})",
             "Просмотреть непрочитанные сообщения",
+            "Выход из аккаунта",
             "Выход"
         ]
         terminal_menu = TerminalMenu(options, title="Выберите действие")
@@ -117,9 +118,27 @@ async def main_menu():
             await view_media()
         elif choice == "Просмотреть непрочитанные сообщения":
             await view_unread_messages()
+        elif choice == "Выход из аккаунта":
+            await logout_account()
         elif choice == "Выход":
             print("Выход из программы...")
             break
+
+async def logout_account():
+    """Выходит из текущего аккаунта и удаляет файл сессии."""
+    clear_console()
+    print("Выход из аккаунта...")
+    try:
+        await client.log_out()
+        session_file = SESSION_NAME + ".session"
+        if os.path.exists(session_file):
+            os.remove(session_file)
+            print("Файл сессии удален.")
+        print("Вы успешно вышли из аккаунта.")
+    except Exception as e:
+        print(f"Ошибка при выходе из аккаунта: {e}")
+    input("Нажмите Enter для завершения программы...")
+    exit()
 
 async def view_chats():
     clear_console()
